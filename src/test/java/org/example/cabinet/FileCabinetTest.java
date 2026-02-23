@@ -26,7 +26,7 @@ public class FileCabinetTest {
 
     @Test
     void count_should_include_nested_folders() {
-        // A(Multi) -> A1, A2(Multi -> A2a)
+        
         Folder a1 = new SimpleFolder("A1", "SMALL");
         Folder a2a = new SimpleFolder("A2a", "SMALL");
         Folder a2 = new SimpleMultiFolder("A2", "MEDIUM", List.of(a2a));
@@ -36,7 +36,6 @@ public class FileCabinetTest {
 
         FileCabinet cabinet = new FileCabinet(List.of(a, b));
 
-        // A, A1, A2, A2a, B = 5
         assertEquals(5, cabinet.count());
     }
     @Test
@@ -62,3 +61,4 @@ public class FileCabinetTest {
         assertTrue(result.isEmpty());
     }
 }
+
